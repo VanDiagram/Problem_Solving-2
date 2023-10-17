@@ -14,9 +14,9 @@ double Calculate(double x, double y)
 
 void showRect(Rectangle r)
 {
-    std::cout << r.length << std::endl;
-    std::cout << r.width << std::endl;
-    std::cout << r.area << std::endl;
+    std::cout << "Your length: " << r.length << std::endl;
+    std::cout << "Your width: " << r.width << std::endl;
+    std::cout << "Area of the rectangle box: " << r.area << std::endl;
 }
 
 int main()
