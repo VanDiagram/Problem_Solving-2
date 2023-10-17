@@ -1,35 +1,42 @@
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 
-struct Rectangle
+struct Circle
 {
-    double length;
-    double width;
+    double diameter;
+    double radius;
     double area;
 };
 
-double Calculate(double &x, double &y)
+Circle getNumber()
 {
-    return (x * y);
+    Circle num;
+
+    std::cout << "Enter diameter of circle: ";
+    std::cin >> num.diameter;
+
+    std::cout << "Enter the radius of circle: ";
+    std::cin >> num.radius;
+
+    return num;
 }
 
-void showRect(Rectangle r)
+double calculate(double x, double y)
 {
-    std::cout << r.length << std::endl;
-    std::cout << r.width << std::endl;
-    std::cout << r.area << std::endl;
+    return x * pow(y, 2.0) * M_PI;
 }
 
 int main()
 {
-    Rectangle box;
-    double *x = &box.length;
-    double *y = &box.width;
+    //Call struct 
+    Circle info = getNumber();
 
-    std::cout << "Enter length and width: ";
-    std::cin >> *x >> *y;
-    box.area = Calculate(*x, *y);
+    //Manipulate digit number
+    std::cout << std::fixed << std::showpoint << std::setprecision(2);
 
-    showRect(box);
+    double calculated = calculate(info.diameter, info.radius);
+    std::cout << calculated;
 
     return 0;
 }
