@@ -1,0 +1,9 @@
+Viết hàm hiển thị xâu kí tự (char[]) nhập vào từ bàn phím
+- tìm các vị trí xuất hiện của chuỗi con(key) nhập vào từ bàn phím
+- in tất cả các vị trí dưới định dạng sau:
+  + Chuỗi đã nhập: 'abcdefabc';
+  + Chuỗi key: 'abc';
+  + Vị trí đã xuất hiện: 0 - 6;
+
+-> Nếu không tìm thấy, thông báo : "Chuỗi ban đầu không chứa chuỗi con: '[key]' ";
+-> Viết hàm thứ 2 thay thế chuỗi con bằng chuỗi khác nhập từ bàn phím.
