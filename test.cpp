@@ -10,7 +10,7 @@ int main()
     std::cin >> n;
     while(i <= n)
     {
-        S = S + i*i;
+        S = S + i;
         i++;
     }
     std::cout << S;
