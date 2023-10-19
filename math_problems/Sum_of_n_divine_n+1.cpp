@@ -1,4 +1,4 @@
-// Calculate S(n) = 1 + 1/2 + 1/3 + ... + 1/n
+// Calculate S(n) = 1 + 1/2 + 2/3 + ... + n/(n + 1)
 #include <iostream>
 #include <iomanip>
 
