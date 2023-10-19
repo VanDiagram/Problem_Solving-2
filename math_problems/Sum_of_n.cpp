@@ -1,4 +1,4 @@
-//calculate the S(n) = 1^2 + 2^2 + ... n^2;
+//calculate the S(n) = 1 + 2 + ... + n
 #include <iostream>
 
 int main()
