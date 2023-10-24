@@ -2,26 +2,24 @@
 #include <cmath>
 #include <iomanip>
 
-struct Circle // Create struct
+struct Circle
 {
     double area;
     int radius;
     double pi = 3.14;
 };
 
-void AskInfo(Circle more) // Prototype asking information
+void AskInfo(Circle more)
 {
-    Circle obj;
-    Circle *ptr = &obj;
+    Circle *ptr = new Circle;
 
     std::cout << "Enter radius here: ";
     std::cin >> ptr->radius;
 }
 
-void calculate(Circle more) // Calculation with given informations
+void calculate(Circle more)
 {
-    Circle obj;
-    Circle *ptr = &obj;
+    Circle *ptr = new Circle;
 
     ptr->area = ptr->pi * pow(ptr->radius, 2.0);
     std::cout << "The area of circle is: " << ptr->area;
@@ -34,6 +32,9 @@ int main()
     Circle test;
     AskInfo(test);
     calculate(test);
+
+    std::cout << std::endl;
+    std::cout << &test.radius;
 
     return 0;
 }
