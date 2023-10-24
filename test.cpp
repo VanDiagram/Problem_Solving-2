@@ -1,18 +1,40 @@
 #include <iostream>
+#include <cmath>
+#include <iomanip>
+
+typedef union Circle
+{
+    double area;
+    int radius;
+    double pi = 3.14;
+};
+
+void AskInfo(Circle more)
+{
+    Circle *ptr = new Circle;
+
+    std::cout << "Enter radius here: ";
+    std::cin >> ptr->radius;
+}
+
+void calculate(Circle more)
+{
+    Circle *ptr = new Circle;
+
+    ptr->area = ptr->pi * pow(ptr->radius, 2.0);
+    std::cout << "The area of circle is: " << ptr->area;
+}
 
 int main()
 {
-    int n, i;
-    long S = 0;
-    i = 1;
+    std::cout << std::fixed << std::showpoint << std::setprecision(2);
 
-    std::cout << "Enter n number: ";
-    std::cin >> n;
-    while(i <= n)
-    {
-        S = S + i;
-        i++;
-    }
-    std::cout << S;
+    Circle test;
+    AskInfo(test);
+    calculate(test);
 
+    std::cout << std::endl;
+    std::cout << &test.radius;
+
+    return 0;
 }
