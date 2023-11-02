@@ -1,7 +1,7 @@
 #include <iostream>
+#include <cctype>
 #define MAX_SIZE 100
 
-// Create a pointer at input prototype so it won't be saving to the RAM
 void input(int arr[], int *n)
 {
     int i = 0;
@@ -9,7 +9,8 @@ void input(int arr[], int *n)
     std::cin >> *n;
     while (i < *n)
     {
-        std::cout << "Array #" << (i + 1) << " :";
+        if (*n > 0 && *n <= MAX_SIZE)
+            std::cout << "Array #" << (i + 1) << " :";
         std::cin >> arr[i];
         i++;
     }
@@ -44,7 +45,7 @@ void output(int arr[], int n)
 int main()
 {
     int n;
-    int arr[MAX_SIZE];
+    int *arr = new int[MAX_SIZE];
 
     input(arr, &n);
     output(arr, n);
@@ -52,5 +53,6 @@ int main()
     int Sum = SumEven(arr, n);
     std::cout << "Summation of even number in array: " << Sum;
 
+    delete[] arr;
     return 0;
 }
